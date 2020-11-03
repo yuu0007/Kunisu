@@ -1,5 +1,6 @@
 const { CommandoClient, SQLiteProvider } = require('discord.js-commando');
 const { Intents, MessageEmbed, WebhookClient } = require('discord.js');
+const Constants = require('discord.js/src/util/Constants.js');
 const { Database } = require('quickmongo');
 const BOATS = require('boats.js');
 const logs = require('discord-logs');
@@ -27,6 +28,8 @@ const server = http.createServer((req, res) => {
 server.listen(8080);
 
 logs(client);
+
+Constants.DefaultOptions.ws.properties.$browser = `Discord Android`
 
 client.db = db;
 

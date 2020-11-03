@@ -13,7 +13,7 @@ module.exports = class extends Command {
 	}
 	
         async run(msg) {
-		msg.react('✔')
+		await msg.react('✅')
 		process.exit();
 	}
 };
