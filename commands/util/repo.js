@@ -6,7 +6,8 @@ module.exports = class extends Command {
 			name: 'repo',
 			memberName: 'repo',
 			group: 'util',
-			description: 'Responds with the bot\'s repository!'
+			description: 'Responds with the bot\'s repository!',
+			guarded: true
 		});
 	}
 
