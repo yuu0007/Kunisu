@@ -20,7 +20,7 @@ module.exports = class extends Command {
 		const embed = new MessageEmbed()
 			.setDescription(
 				`Kunisu's ping: \`${latency} ms\`\nHeartbeat ping: \`${
-					this.client.ws.ping
+				this.client.ws.ping
 				} ms\`\nDatabase ping: \`${Math.round(ping.average)} ms\``
 			)
 			.setTimestamp()

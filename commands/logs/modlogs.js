@@ -26,10 +26,10 @@ module.exports = class extends Command {
 			avatar: this.client.user.displayAvatarURL({ size: 4096 }),
 			reason: 'Mod-Logs'
 		})
-		.then(async hook => {
-			await this.client.db.set(`modtoken_${msg.guild.id}`, hook.token);
-			await this.client.db.set(`modid_${msg.guild.id}`, hook.id)
-		});
+			.then(async hook => {
+				await this.client.db.set(`modtoken_${msg.guild.id}`, hook.token);
+				await this.client.db.set(`modid_${msg.guild.id}`, hook.id)
+			});
 		msg.embed({
 			description: `Successfully set the mod logs channel to <#${channel.id}>!`,
 			color: 'RANDOM'

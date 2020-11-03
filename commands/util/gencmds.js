@@ -29,7 +29,7 @@ module.exports = class extends Command {
 			contentType: 'md',
 			server: 'https://hastebin.com'
 		})
-		.then(url => msg.direct(url));
+			.then(url => msg.direct(url));
 		msg.say('Check your direct messages!');
 	}
 };
