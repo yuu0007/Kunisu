@@ -29,5 +29,11 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/yuu0007/Kunisu.git"
+	},
+	"eslintConfig": {
+		"extends": "amber",
+		"plugins": [
+			"json"
+		]
 	}
 }
