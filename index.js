@@ -27,6 +27,8 @@ logs(client);
 
 client.db = db;
 
+client.config = config;
+
 client.registry
 	.registerDefaultTypes()
 	.registerTypesIn(path.join(__dirname, 'types'))
@@ -34,8 +36,7 @@ client.registry
 		['anime', 'Anime'],
 		['util', 'Utility'],
 		['commands', 'Commands'],
-		['logs', 'Logging'],
-		['rr', 'Reaction Roles']
+		['logs', 'Logging']
 	])
 	.registerDefaultCommands({
 		unknownCommand: false,

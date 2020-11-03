@@ -2,5 +2,6 @@
 	"mongodb": "your mongo path",
 	"token": "bot token",
 	"prefix": "your bot prefix",
-	"owner": "your bot owner id"
+	"owner": "your bot owner id",
+	"repolink": "github repo link"
 }
