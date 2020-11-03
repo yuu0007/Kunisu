@@ -1,23 +1,27 @@
 {
-  "name": "kunisubot",
-  "version": "3.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "common-tags": "^1.8.0",
-    "discord-logs": "^1.7.7",
-    "discord.js": "^12.4.1",
-    "discord.js-commando": "github:discordjs/Commando",
-    "hastebin": "^0.2.1",
-    "node-superfetch": "^0.1.10",
-    "quickmongo": "^2.0.5",
-    "sqlite": "^4.0.15",
-    "sqlite3": "^5.0.0"
-  }
+	"name": "kunisubot",
+	"version": "3.2.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "yuu0007",
+	"license": "BSD-3",
+	"dependencies": {
+		"common-tags": "^1.8.0",
+		"discord-logs": "^1.7.7",
+		"discord.js": "^12.4.1",
+		"discord.js-commando": "github:discordjs/Commando",
+		"hastebin": "^0.2.1",
+		"node-superfetch": "^0.1.10",
+		"quickmongo": "^2.0.5",
+		"sqlite": "^4.0.15",
+		"sqlite3": "^5.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yuu0007/Kunisu.git"
+	}
 }
