@@ -2,6 +2,13 @@
 A multipurpose discord bot.
 ![](https://cdn.discordapp.com/avatars/753183327644811274/efe7c40c79175b4cc14b83c588642658.png?size=1024)
 
+# License
+Kunisu is licensed under the **BSD 3-Clause License**.
+
+Copyright (c) 2020, yuu0007
+
+All rights reserved.
+
 # Commands
 Total: 14
 
