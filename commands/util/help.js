@@ -60,15 +60,18 @@ module.exports = class extends Command {
 		}
 		const userPerms = command.userPermissions ? command.userPermissions.map(perm => permissions[perm]).join(', ') : 'None';
 		const clientPerms = command.clientPermissions ? command.clientPermissions.map(perm => permissions[perm]).join(', ') : 'None';
-		return msg.say(stripIndents`
-			__Command **${command.name}**__${command.guildOnly ? ' (Usable only in servers)' : ''}
-			${command.description}${command.details ? `\n${command.details}` : ''}
-			**Format:** ${command.usage(command.format || '')}
-			**Aliases:** ${command.aliases.join(', ') || 'None'}
-			**Group:** ${command.group.name} (\`${command.groupID}:${command.memberName}\`)
-			**NSFW:** ${command.nsfw ? 'Yes' : 'No'}
-			**Permissions You Need:** ${userPerms}
-			**Permissions I Need:** ${clientPerms}
-		`);
+		const emb = new MessageEmbed()
+			.setTitle(`__Command **${command.name}**__${command.guildOnly ? ' (Usable only in servers)' : ''}`)
+			.setDescription(`${command.description}${command.details ? `\n${command.details}` : ''}`)
+			.addField('**Format:**', `${command.usage(command.format || '')}`, true)
+			.addField('**Aliases:**', `${command.aliases.join(', ') || 'None'}`, true)
+			.addField('**Group:**', `${command.group.name} (\`${command.groupID}:${command.memberName}\`)`, true)
+			.addField('**NSFW:**', `${command.nsfw ? 'Yes' : 'No'}`, true)
+			.addField('**User Permissions:**', `${userPerms}`, true)
+			.addField(`**Bot Permissions:**`, `${clientPerms}`, true)
+			.setColor('RANDOM')
+			.setFooter(`Requested by ${msg.author.tag}`, msg.author.displayAvatarURL({ dynamic: true, size: 4096 }))
+			.setTimestamp();
+		return msg.say(emb);
 	}
 }

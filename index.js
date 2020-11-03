@@ -1,8 +1,10 @@
-const { CommandoClient } = require('discord.js-commando');
+const { CommandoClient, SQLiteProvider } = require('discord.js-commando');
 const { Intents, MessageEmbed, WebhookClient } = require('discord.js');
 const { Database } = require('quickmongo');
 const logs = require('discord-logs');
 const path = require('path');
+const sqlite = require('sqlite');
+const sqlite3 = require('sqlite3');
 const http = require('http');
 const config = require('./config.json');
 
@@ -36,7 +38,6 @@ client.registry
 		['rr', 'Reaction Roles']
 	])
 	.registerDefaultCommands({
-		prefix: false,
 		unknownCommand: false,
 		ping: false,
 		eval: false,
@@ -118,6 +119,8 @@ client.on('voiceChannelUnmute', async (member, oldMuteType) => {
 		webhook.send(embed)
 	}
 });
+
+client.setProvider(sqlite.open({ filename: 'database.db', driver: sqlite3.Database }).then(db => new SQLiteProvider(db))).catch(console.error);
 
 client.login(config.token);
 
