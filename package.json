@@ -1,6 +1,6 @@
 {
 	"name": "kunisubot",
-	"version": "3.2.0",
+	"version": "3.3.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -19,6 +19,10 @@
 		"quickmongo": "^2.0.5",
 		"sqlite": "^4.0.15",
 		"sqlite3": "^5.0.0"
+	},
+	"devDependencies": {
+		"eslint": "^7.12.1",
+		"prettier": "^2.1.2"
 	},
 	"repository": {
 		"type": "git",
