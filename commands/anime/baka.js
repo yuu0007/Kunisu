@@ -5,10 +5,10 @@ const request = require('node-superfetch')
 module.exports = class extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'smug',
-			memberName: 'smug',
+			name: 'baka',
+			memberName: 'baka',
 			group: 'anime',
-			description: 'Sends an anime smug image!'
+			description: 'Sends an anime baka image!'
 		});
 	}
 
@@ -16,7 +16,7 @@ module.exports = class extends Command {
 		const embed = new MessageEmbed()
 			.setDescription('Getting the image...');
 		const message = await msg.say(embed);
-		const { body } = await request.get('https://api.kunisu.tk/smug');
+		const { body } = await request.get('https://api.kunisu.tk/baka');
 		const emb = new MessageEmbed()
 			.setImage(body.url)
 			.setColor('RANDOM')

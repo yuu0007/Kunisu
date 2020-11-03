@@ -10,11 +10,13 @@ Copyright (c) 2020, yuu0007
 All rights reserved.
 
 # Commands
-Total: 14
+Total: 16
 
 ### Anime:
 
+* **baka:** Sends an anime baka image!
 * **smug:** Sends an anime smug image!
+* **tickle:** Sends an anime tickle image!
 
 ### Utility:
 
