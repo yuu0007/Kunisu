@@ -3,5 +3,6 @@
 	"token": "bot token",
 	"prefix": "your bot prefix",
 	"owner": "your bot owner id",
-	"repolink": "github repo link"
+	"repolink": "github repo link",
+	"boats": "discord.boats api key"
 }
