@@ -1,6 +1,7 @@
 const request = require('node-superfetch');
 const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
+const { stripIndents } = require('common-tags');
 
 module.exports = class extends Command {
 	constructor(client) {
@@ -19,7 +20,7 @@ module.exports = class extends Command {
 		const embed = new MessageEmbed()
 			.setImage(body.img)
 			.setTitle(body.name)
-			.setDescription(body.about)
+			.setDescription(stripIndents`${body.about}`)
 			.setURL(body.url)
 			.setColor('RANDOM')
 			.setFooter(`Requested by ${msg.author.tag}`, msg.author.displayAvatarURL({ dynamic: true, size: 4096 }))
