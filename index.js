@@ -14,7 +14,7 @@ const client = new CommandoClient({
 	commandPrefix: config.prefix,
 	owner: config.owner,
 	partials: ['MESSAGE', 'REACTION'],
-	ws: { intents: Intents.ALL },
+	ws: { intents: Intents.ALL, properties: { $browser: 'Discord Android' } },
 	disableMentions: 'everyone'
 });
 
