@@ -1,4 +1,8 @@
-const { CommandoClient, SQLiteProvider } = require("discord.js-commando");
+const {
+	CommandoClient,
+	SQLiteProvider,
+	FriendlyError,
+} = require("discord.js-commando");
 const { Intents, MessageEmbed, WebhookClient } = require("discord.js");
 const { Database } = require("quickmongo");
 const logs = require("discord-logs");
@@ -134,6 +138,25 @@ client.on("voiceChannelUnmute", async (member, oldMuteType) => {
 	}
 });
 
+client.on("debug", console.log);
+
+client.on("error", console.error);
+
+client.on("warn", console.warn);
+
+client.on("disconnect", () => {
+	console.log("Disconnected...");
+});
+
+client.on("reconnecting", () => {
+	console.log("Reconnecting...");
+});
+
+client.on("commandError", (cmd, err) => {
+	if (err instanceof FriendlyError) return;
+	console.error(`Error in command ${cmd.groupID}:${cmd.memberName}`, err);
+});
+
 client.setProvider(
 	sqlite
 		.open({ filename: "database.db", driver: sqlite3.Database })
@@ -147,7 +170,3 @@ db.on("ready", async () => {
 	console.log("MongoDB is ready!");
 	console.log(`${Math.round(ping.average)} ms`);
 });
-
-setInterval(() => {
-	require("node-superfetch").get("https://kunisubot.yuu0007.repl.co");
-}, 180000);
