@@ -1,7 +1,6 @@
 const { CommandoClient, SQLiteProvider } = require("discord.js-commando");
 const { Intents, MessageEmbed, WebhookClient } = require("discord.js");
 const { Database } = require("quickmongo");
-const BOATS = require("boats.js");
 const logs = require("discord-logs");
 const path = require("path");
 const sqlite = require("sqlite");
@@ -20,8 +19,6 @@ const client = new CommandoClient({
 	disableMentions: "everyone",
 });
 
-const Boats = new BOATS(config.boats);
-
 const db = new Database(config.mongodb);
 
 const server = http.createServer((req, res) => {
@@ -34,8 +31,6 @@ logs(client);
 client.db = db;
 
 client.config = config;
-
-client.boats = Boats;
 
 client.registry
 	.registerDefaultTypes()
@@ -62,13 +57,6 @@ client.on("ready", () => {
 			.toLocaleString()} people`,
 		{ type: "WATCHING" }
 	);
-	Boats.postStats(client.guilds.cache.size, client.user.id)
-		.then(() => {
-			console.log("Successfully updated server count.");
-		})
-		.catch((err) => {
-			console.error(err);
-		});
 });
 
 client.on("voiceChannelJoin", async (member, channel) => {
