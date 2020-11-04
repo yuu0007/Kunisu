@@ -22,7 +22,7 @@ module.exports = class extends Command {
 			.setDescription(body.about)
 			.setURL(body.url)
 			.setColor('RANDOM')
-			.setFooter(`Requested by ${msg.author.tag}`)
+			.setFooter(`Requested by ${msg.author.tag}`, msg.author.displayAvatarURL({ dynamic: true, size: 4096 }))
 			.setTimestamp();
 		m.edit(embed);
 	}
