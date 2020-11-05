@@ -28,7 +28,13 @@ module.exports = class extends Command {
 		});
 		const res = await posts({ tags: [query] });
 		const embed = new MessageEmbed()
-			.setImage(res.file_url)
+			.setImage(
+				res.posts[
+					Math.floor(
+						Math.random() * res.posts.length
+					)
+				].file_url
+			)
 			.setColor("RANDOM")
 			.setFooter(
 				`Requested by ${msg.author.tag}`,
