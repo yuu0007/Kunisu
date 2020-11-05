@@ -23,27 +23,32 @@ module.exports = class extends Command {
 	}
 
 	async run(msg, { query }) {
-		const embe = await msg.embed({
-			description: "Getting the image...",
-		});
-		const res = await posts({ tags: [query] });
-		const embed = new MessageEmbed()
-			.setImage(
-				res.posts[
-					Math.floor(
-						Math.random() * res.posts.length
-					)
-				].file_url
-			)
-			.setColor("RANDOM")
-			.setFooter(
-				`Requested by ${msg.author.tag}`,
-				msg.author.displayAvatarURL({
-					dynamic: true,
-					size: 4096,
-				})
-			)
-			.setTimestamp();
-		embe.edit(embed);
+		try {
+			const embe = await msg.embed({
+				description: "Getting the image...",
+			});
+			const res = await posts({ tags: [query] });
+			const embed = new MessageEmbed()
+				.setImage(
+					res.posts[
+						Math.floor(
+							Math.random() *
+								res.posts.length
+						)
+					].file_url
+				)
+				.setColor("RANDOM")
+				.setFooter(
+					`Requested by ${msg.author.tag}`,
+					msg.author.displayAvatarURL({
+						dynamic: true,
+						size: 4096,
+					})
+				)
+				.setTimestamp();
+			embe.edit(embed);
+		} catch (err) {
+			msg.reply("Couldn't find anything for that.");
+		}
 	}
 };
