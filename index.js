@@ -44,6 +44,7 @@ client.registry
 		["util", "Utility"],
 		["commands", "Commands"],
 		["logs", "Logging"],
+		["nsfw", "NSFW"],
 	])
 	.registerDefaultCommands({
 		unknownCommand: false,

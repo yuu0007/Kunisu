@@ -19,6 +19,7 @@
 		"hastebin": "^0.2.1",
 		"node-superfetch": "^0.1.10",
 		"quickmongo": "^2.0.5",
+		"rule34js": "^2.2.0",
 		"sqlite": "^4.0.15",
 		"sqlite3": "^5.0.0"
 	},
