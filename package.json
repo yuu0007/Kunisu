@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"lint": "eslint . --fix && prettier --write ."
+		"lint": "eslint . --fix && prettier --write .",
+		"push": "npm run lint && git push"
 	},
 	"keywords": [],
 	"author": "yuu0007",

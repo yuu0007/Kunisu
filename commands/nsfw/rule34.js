@@ -23,10 +23,10 @@ module.exports = class extends Command {
 	}
 
 	async run(msg, { query }) {
+		const embe = await msg.embed({
+			description: "Getting the image...",
+		});
 		try {
-			const embe = await msg.embed({
-				description: "Getting the image...",
-			});
 			const res = await posts({ tags: [query] });
 			const embed = new MessageEmbed()
 				.setImage(
@@ -48,7 +48,8 @@ module.exports = class extends Command {
 				.setTimestamp();
 			embe.edit(embed);
 		} catch (err) {
-			msg.reply("Couldn't find anything for that.");
+			const emb = new MessageEmbed().setDescription('Couldn\'t find anything for that...');
+			embe.edit(emb);
 		}
 	}
 };
