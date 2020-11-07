@@ -12,17 +12,23 @@
 	"author": "yuu0007",
 	"license": "BSD-3-Clause",
 	"dependencies": {
+		"@discordjs/opus": "^0.3.3",
+		"bufferutil": "^4.0.2",
 		"common-tags": "^1.8.0",
 		"discord-logs": "^1.7.7",
 		"discord.js": "^12.4.1",
 		"discord.js-commando": "github:discordjs/Commando",
+		"erlpack": "github:discord/erlpack",
 		"goodparts": "^1.3.0",
 		"hastebin": "^0.2.1",
+		"libsodium-wrappers": "^0.7.8",
 		"node-superfetch": "^0.1.10",
 		"quickmongo": "^2.0.5",
 		"rule34js": "^2.2.0",
 		"sqlite": "^4.0.15",
-		"sqlite3": "^5.0.0"
+		"sqlite3": "^5.0.0",
+		"utf-8-validate": "^5.0.3",
+		"zlib-sync": "^0.1.7"
 	},
 	"devDependencies": {
 		"eslint": "^7.12.1",
