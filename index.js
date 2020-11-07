@@ -9,7 +9,6 @@ const logs = require("discord-logs");
 const path = require("path");
 const sqlite = require("sqlite");
 const sqlite3 = require("sqlite3");
-const http = require("http");
 const config = require("./config.json");
 
 const client = new CommandoClient({
@@ -24,11 +23,6 @@ const client = new CommandoClient({
 });
 
 const db = new Database(config.mongodb);
-
-const server = http.createServer((req, res) => {
-	res.end("hello");
-});
-server.listen(8080);
 
 logs(client);
 
