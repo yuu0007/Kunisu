@@ -39,10 +39,10 @@ module.exports = class extends Command {
 		const img = wtf(String(pageid));
 		const embed = new MessageEmbed()
 			.setTitle(data.title())
-			.setDescription(data.text())
+			.setDescription(data.text().substring(0, 2048))
 			.setThumbnail(img.url())
 			.setURL(data.url())
-			.setFooter(`Requested by ${msg.author.tag}`)
+			.setFooter(`Requested by ${msg.author.tag}`, msg.author.displayAvatarURL({ dynamic: true, size: 4096 }))
 			.setTimestamp()
 			.setColor("RANDOM");
 		return m.edit(embed);
