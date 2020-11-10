@@ -26,7 +26,12 @@ module.exports = class extends Command {
 		const m = await msg.embed({
 			description: "Fetching the results...",
 		});
-		const data = await wtf.fetch(query);
+		const data = await wtf.fetch(query).catch(() => {
+			const emb = new MessageEmbed().setDescription(
+				"Couldn't find anything for that..."
+			);
+			return m.edit(emb);
+		});
 		if (data.nsfw().safe_for_work === false && !msg.channel.nsfw) {
 			const embe = new MessageEmbed().setDescription(
 				`The following content has NSFW Content:\nReason: ${
