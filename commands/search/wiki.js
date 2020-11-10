@@ -35,12 +35,13 @@ module.exports = class extends Command {
 			);
 			return m.edit(embe);
 		}
-		const img = data.images(0).json();
+		const pageid = data.pageID();
+		const img = wtf(String(pageid));
 		const embed = new MessageEmbed()
 			.setTitle(data.title())
 			.setDescription(data.text())
-			.setThumbnail(img.url)
-			.setURL(data.url())
+			.setThumbnail()
+			.setURL(img.url())
 			.setFooter(`Requested by ${msg.author.tag}`)
 			.setTimestamp()
 			.setColor("RANDOM");
