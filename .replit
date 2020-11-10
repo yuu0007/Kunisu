@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "git add -A && git commit -m \"Added wiki cmd\" && git push -U origin master"
+run = "git add -A && git commit -m \"Added wiki cmd\" && git push -u origin master"
