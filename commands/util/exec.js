@@ -2,11 +2,12 @@ const { Command } = require("discord.js-commando");
 const { execSync } = require("child_process");
 const { stripIndents } = require("common-tags");
 
-module.exports = class ExecCommand extends Command {
+module.exports = class extends Command {
 	constructor(client) {
 		super(client, {
 			name: "exec",
 			aliases: ["execute", "$"],
+			aliases: ["execute", "$", "sh"],
 			group: "util",
 			memberName: "exec",
 			description: "Executes a command-line application.",

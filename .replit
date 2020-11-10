@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "npx pm2 start index.js"
+run = "git add -A && git commit -m \"Added wiki cmd\" && git push -u origin master"
