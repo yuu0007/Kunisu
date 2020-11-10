@@ -73,7 +73,7 @@ module.exports = class extends Command {
 				backwards.on("collect", (r) => {
 					if (page === 1) return;
 					page--;
-					embed.setDescription(pages[page - 1]);
+					embed.setImage(pages[page - 1]);
 					embed.setFooter(
 						`Page ${page} of ${pages.length}`
 					);
@@ -83,7 +83,7 @@ module.exports = class extends Command {
 				forwards.on("collect", (r) => {
 					if (page === pages.length) return;
 					page++;
-					embed.setDescription(pages[page - 1]);
+					embed.setImage(pages[page - 1]);
 					embed.setFooter(
 						`Page ${page} of ${pages.length}`
 					);
