@@ -63,11 +63,11 @@ module.exports = class extends Command {
 
 				const backwards = message.createReactionCollector(
 					backwardsFilter,
-					{ time: 60000 }
+					{ time: 600000 }
 				);
 				const forwards = message.createReactionCollector(
 					forwardsFilter,
-					{ time: 60000 }
+					{ time: 600000 }
 				);
 
 				backwards.on("collect", (r) => {
