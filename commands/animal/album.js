@@ -18,6 +18,25 @@ module.exports = class extends Command {
 		const pages = [];
 		const { body } = await request.get("https://api.kunisu.tk/cat");
 		pages.push(body.url);
+		const bod = await this.req("https://api.kunisu.tk/dog");
+		pages.push(bod);
+		const bo = await this.req("https://api.kunisu.tk/panda");
+		pages.push(bo);
+		const lmao = await this.req("https://api.kunisu.tk/redpanda");
+		pages.push(lmao);
+		const lol = await this.req(
+			"https://some-random-api.ml/img/birb"
+		);
+		pages.push(lol);
+		const helpme = await this.req(
+			"https://some-random-api.ml/img/fox"
+		);
+		pages.push(helpme);
+		const wtf = await this.req(
+			"https://some-random-api.ml/img/koala"
+		);
+		pages.push(wtf);
+
 		const { bod } = await request.get("https://api.kunisu.tk/dog");
 		pages.push(bod.url);
 		const { bo } = await request.get("https://api.kunisu.tk/panda");
@@ -85,5 +104,9 @@ module.exports = class extends Command {
 				});
 			});
 		});
+	}
+	async req(url) {
+		const { body } = await request.get(url);
+		return body.url || body.link;
 	}
 };
