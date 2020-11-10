@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "npx eslint . --fix && npx prettier --write ."
+run = "git add -A && git commit -m \"Added wiki cmd\" && git push -U origin master"
