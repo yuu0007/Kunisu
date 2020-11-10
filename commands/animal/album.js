@@ -37,27 +37,6 @@ module.exports = class extends Command {
 		);
 		pages.push(wtf);
 
-		const { bod } = await request.get("https://api.kunisu.tk/dog");
-		pages.push(bod.url);
-		const { bo } = await request.get("https://api.kunisu.tk/panda");
-		pages.push(bo.url);
-		const { lmao } = await request.get(
-			"https://api.kunisu.tk/redpanda"
-		);
-		pages.push(lmao.url);
-		const { lol } = await request.get(
-			"https://some-random-api.ml/img/birb"
-		);
-		pages.push(lol.link);
-		const { helpme } = await request.get(
-			"https://some-random-api.ml/img/fox"
-		);
-		pages.push(helpme.link);
-		const { wtf } = await request.get(
-			"https://some-random-api.ml/img/koala"
-		);
-		pages.push(wtf.link);
-
 		const embed = new MessageEmbed()
 			.setColor("RANDOM")
 			.setFooter(`Page ${page} of ${pages.length}`)
