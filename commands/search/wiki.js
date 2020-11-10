@@ -38,7 +38,7 @@ module.exports = class extends Command {
 		const embed = new MessageEmbed()
 			.setTitle(data.title())
 			.setDescription(data.text())
-			.setThumbnail(data.thumbnail())
+			.setThumbnail(data.images(0).url())
 			.setURL(data.url())
 			.setFooter(`Requested by ${msg.author.tag}`)
 			.setTimestamp()
