@@ -39,7 +39,7 @@ client.registry
 		["commands", "Commands"],
 		["logs", "Logging"],
 		["nsfw", "NSFW"],
-		["animal', "Animals"],
+		["animal", "Animals"],
 	])
 	.registerDefaultCommands({
 		unknownCommand: false,
