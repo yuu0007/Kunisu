@@ -16,13 +16,13 @@ module.exports = class extends Command {
 	async run(msg) {
 		let page = 1;
 		const pages = [];
-		const { body } = await request.get("https://api.kunisu.tk/cat");
-		pages.push(body.url);
-		const bod = await this.req("https://api.kunisu.tk/dog");
+		const { body } = await request.get("https://some-random-api.ml/img/cat");
+		pages.push(body.link);
+		const bod = await this.req("https://some-random-api.ml/img/dog");
 		pages.push(bod);
-		const bo = await this.req("https://api.kunisu.tk/panda");
+		const bo = await this.req("https://some-random-api.ml/img/panda");
 		pages.push(bo);
-		const lmao = await this.req("https://api.kunisu.tk/redpanda");
+		const lmao = await this.req("https://some-random-api.ml/img/red_panda");
 		pages.push(lmao);
 		const lol = await this.req(
 			"https://some-random-api.ml/img/birb"
@@ -69,7 +69,7 @@ module.exports = class extends Command {
 					embed.setFooter(
 						`Page ${page} of ${pages.length}`
 					);
-					msg.edit(embed);
+					message.edit(embed);
 				});
 
 				forwards.on("collect", (r) => {
@@ -79,13 +79,13 @@ module.exports = class extends Command {
 					embed.setFooter(
 						`Page ${page} of ${pages.length}`
 					);
-					msg.edit(embed);
+					message.edit(embed);
 				});
 			});
 		});
 	}
 	async req(url) {
 		const { body } = await request.get(url);
-		return body.url || body.link;
+		return body.link;
 	}
 };
