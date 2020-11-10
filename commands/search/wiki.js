@@ -40,8 +40,8 @@ module.exports = class extends Command {
 		const embed = new MessageEmbed()
 			.setTitle(data.title())
 			.setDescription(data.text())
-			.setThumbnail()
-			.setURL(img.url())
+			.setThumbnail(img.url())
+			.setURL(data.url())
 			.setFooter(`Requested by ${msg.author.tag}`)
 			.setTimestamp()
 			.setColor("RANDOM");
