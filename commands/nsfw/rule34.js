@@ -48,7 +48,9 @@ module.exports = class extends Command {
 				.setTimestamp();
 			embe.edit(embed);
 		} catch (err) {
-			const emb = new MessageEmbed().setDescription('Couldn\'t find anything for that...');
+			const emb = new MessageEmbed().setDescription(
+				"Couldn't find anything for that..."
+			);
 			embe.edit(emb);
 		}
 	}

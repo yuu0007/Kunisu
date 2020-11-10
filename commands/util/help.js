@@ -134,15 +134,9 @@ module.exports = class extends Command {
 				"**Group:**",
 				`${command.group.name} (\`${command.groupID}:${command.memberName}\`)`
 			)
-			.addField(
-				"**NSFW:**",
-				`${command.nsfw ? "Yes" : "No"}`
-			)
+			.addField("**NSFW:**", `${command.nsfw ? "Yes" : "No"}`)
 			.addField("**User Permissions:**", `${userPerms}`)
-			.addField(
-				`**Bot Permissions:**`,
-				`${clientPerms}`
-			)
+			.addField(`**Bot Permissions:**`, `${clientPerms}`)
 			.setColor("RANDOM")
 			.setFooter(
 				`Requested by ${msg.author.tag}`,

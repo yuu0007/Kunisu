@@ -16,13 +16,21 @@ module.exports = class extends Command {
 	async run(msg) {
 		let page = 1;
 		const pages = [];
-		const { body } = await request.get("https://some-random-api.ml/img/cat");
+		const { body } = await request.get(
+			"https://some-random-api.ml/img/cat"
+		);
 		pages.push(body.link);
-		const bod = await this.req("https://some-random-api.ml/img/dog");
+		const bod = await this.req(
+			"https://some-random-api.ml/img/dog"
+		);
 		pages.push(bod);
-		const bo = await this.req("https://some-random-api.ml/img/panda");
+		const bo = await this.req(
+			"https://some-random-api.ml/img/panda"
+		);
 		pages.push(bo);
-		const lmao = await this.req("https://some-random-api.ml/img/red_panda");
+		const lmao = await this.req(
+			"https://some-random-api.ml/img/red_panda"
+		);
 		pages.push(lmao);
 		const lol = await this.req(
 			"https://some-random-api.ml/img/birb"

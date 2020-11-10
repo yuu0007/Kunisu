@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "npx pm2 start index.js"
+run = "npx eslint . --fix && npx prettier --write ."
