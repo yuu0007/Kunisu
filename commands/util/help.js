@@ -124,29 +124,24 @@ module.exports = class extends Command {
 			)
 			.addField(
 				"**Format:**",
-				`${command.usage(command.format || "")}`,
-				true
+				`${command.usage(command.format || "")}`
 			)
 			.addField(
 				"**Aliases:**",
-				`${command.aliases.join(", ") || "None"}`,
-				true
+				`${command.aliases.join(", ") || "None"}`
 			)
 			.addField(
 				"**Group:**",
-				`${command.group.name} (\`${command.groupID}:${command.memberName}\`)`,
-				true
+				`${command.group.name} (\`${command.groupID}:${command.memberName}\`)`
 			)
 			.addField(
 				"**NSFW:**",
-				`${command.nsfw ? "Yes" : "No"}`,
-				true
+				`${command.nsfw ? "Yes" : "No"}`
 			)
-			.addField("**User Permissions:**", `${userPerms}`, true)
+			.addField("**User Permissions:**", `${userPerms}`)
 			.addField(
 				`**Bot Permissions:**`,
-				`${clientPerms}`,
-				true
+				`${clientPerms}`
 			)
 			.setColor("RANDOM")
 			.setFooter(
