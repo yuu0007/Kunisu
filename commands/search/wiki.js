@@ -7,7 +7,7 @@ module.exports = class extends Command {
 	constructor(client) {
 		super(client, {
 			name: "wiki",
-			aliases: ["wikipedia", 'wi'],
+			aliases: ["wikipedia", "wi"],
 			memberName: "wiki",
 			group: "search",
 			description: "Searches wikipedia for your query.",
@@ -39,10 +39,20 @@ module.exports = class extends Command {
 		const img = wtf(String(pageid));
 		const embed = new MessageEmbed()
 			.setTitle(data.title())
-			.setDescription(data.text().substring(0, 2048))
+			.setDescription(
+				data.text().length > 2048
+					? `${data.text().substring(0, 2045)}...`
+					: data.text()
+			)
 			.setThumbnail(img.url())
 			.setURL(data.url())
-			.setFooter(`Requested by ${msg.author.tag}`, msg.author.displayAvatarURL({ dynamic: true, size: 4096 }))
+			.setFooter(
+				`Requested by ${msg.author.tag}`,
+				msg.author.displayAvatarURL({
+					dynamic: true,
+					size: 4096,
+				})
+			)
 			.setTimestamp()
 			.setColor("RANDOM");
 		return m.edit(embed);
