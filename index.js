@@ -72,7 +72,11 @@ app.get("/", async (request, response) => {
 	);
 });
 
+<<<<<<< HEAD
 server.listen(3000, () => {
+=======
+server.listen(2007, () => {
+>>>>>>> d3b64c3e666ef0a419b17f253b07dc279a89d486
 	console.log("Monitoring is ready!");
 });
 
@@ -81,7 +85,7 @@ client.db = db;
 client.config = config;
 
 client.database = JSON.parse(
-	fs.readFileSync(path.join(__dirname, "links.json"), "utf-8")
+	fs.readFileSync(path.join(__dirname, "link.json"), "utf-8")
 );
 
 client.registry

@@ -6,6 +6,7 @@ module.exports = class extends Command {
 	constructor(client) {
 		super(client, {
 			name: "exec",
+			aliases: ["execute", "$"],
 			aliases: ["execute", "$", "sh"],
 			group: "util",
 			memberName: "exec",
