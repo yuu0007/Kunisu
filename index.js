@@ -6,7 +6,12 @@ const {
 const { Intents, MessageEmbed, WebhookClient } = require("discord.js");
 const { Database } = require("quickmongo");
 const logs = require("discord-logs");
+const fs = require("fs");
 const path = require("path");
+const http = require("http");
+const express = require("express");
+const bodyParser = require("body-parser");
+const fetch = require("node-fetch");
 const sqlite = require("sqlite");
 const sqlite3 = require("sqlite3");
 const config = require("./config.json");
@@ -24,11 +29,60 @@ const client = new CommandoClient({
 
 const db = new Database(config.mongodb);
 
+const app = express();
+
+const server = http.createServer(app);
+
 logs(client);
+
+app.use(express.static("public"));
+
+app.use(bodyParser.json());
+
+let count = 0;
+let invcount = 0;
+let user = 0;
+let rounds = 0;
+
+setInterval(() => {
+	const database = JSON.parse(
+		fs.readFileSync(path.join(__dirname, "links.json"), "utf-8")
+	);
+	count = 0;
+	invcount = 0;
+	user = database.length;
+	rounds++;
+
+	database.forEach((m) => {
+		m.link.forEach((s) => {
+			count++;
+
+			fetch(s).catch(() => {
+				invcount++;
+			});
+		});
+	});
+}, 240000);
+
+// eslint-disable-next-line no-unused-vars
+app.get("/", async (request, response) => {
+	response.writeHead(200, { "Content-Type": "text/plain" });
+	response.end(
+		`Monitoring ${count} websites amd ${invcount} Invaliid websites with ${user} Users. Fetch Count: ${rounds}`
+	);
+});
+
+server.listen(3000, () => {
+	console.log("Monitoring is ready!");
+});
 
 client.db = db;
 
 client.config = config;
+
+client.database = JSON.parse(
+	fs.readFileSync(path.join(__dirname, "links.json"), "utf-8")
+);
 
 client.registry
 	.registerDefaultTypes()
@@ -41,6 +95,7 @@ client.registry
 		["nsfw", "NSFW"],
 		["animal", "Animals"],
 		["search", "Search"],
+		["web", "Website Monitoring"],
 	])
 	.registerDefaultCommands({
 		unknownCommand: false,
