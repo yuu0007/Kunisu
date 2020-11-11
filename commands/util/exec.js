@@ -28,7 +28,11 @@ module.exports = class extends Command {
 		return msg.reply(stripIndents`
 			_${results.err ? "An error occurred:" : "Successfully executed."}_
 			\`\`\`sh
-			${results.std}
+			${
+				results.std.length > 2048
+					? `${results.std.substring(0, 2039)}...`
+					: results.std
+			}
 			\`\`\`
 		`);
 	}
