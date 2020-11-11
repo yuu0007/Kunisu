@@ -25,12 +25,13 @@ module.exports = class extends Command {
 		const m = await msg.embed({
 			description: "Fetching the image...",
 		});
-		const data = await Reddit.random(subreddit).catch(() => {
+		const data = await Reddit.random(subreddit);
+		if (data.title === undefined) {
 			const emb = new MessageEmbed().setDescription(
 				"That subreddit doesn't exist..."
 			);
 			return m.edit(emb);
-		});
+		}
 		if (data.nsfw && !msg.channel.nsfw) {
 			const embe = new MessageEmbed().setDescription(
 				"The content has NSFW Content..."
