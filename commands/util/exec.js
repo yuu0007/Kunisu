@@ -7,7 +7,6 @@ module.exports = class extends Command {
 		super(client, {
 			name: "exec",
 			aliases: ["execute", "$"],
-			aliases: ["execute", "$", "sh"],
 			group: "util",
 			memberName: "exec",
 			description: "Executes a command-line application.",

@@ -72,11 +72,7 @@ app.get("/", async (request, response) => {
 	);
 });
 
-<<<<<<< HEAD
-server.listen(3000, () => {
-=======
 server.listen(2007, () => {
->>>>>>> d3b64c3e666ef0a419b17f253b07dc279a89d486
 	console.log("Monitoring is ready!");
 });
 
