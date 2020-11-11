@@ -31,7 +31,7 @@ module.exports = class extends Command {
 			\`\`\`sh
 			${
 				results.std.length > 2048
-					? `${results.std.substring(0, 2039)}...`
+					? `${results.std.substring(0, 1991)}...`
 					: results.std
 			}
 			\`\`\`
