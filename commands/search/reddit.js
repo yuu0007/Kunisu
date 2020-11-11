@@ -22,11 +22,13 @@ module.exports = class extends Command {
 	}
 
 	async run(msg, { subreddit }) {
+		let data;
 		const m = await msg.embed({
 			description: "Fetching the image...",
 		});
-		const data = await Reddit.random(subreddit);
-		if (data.title === undefined) {
+		try {
+			data = await Reddit.random(subreddit);
+		} catch {
 			const emb = new MessageEmbed().setDescription(
 				"That subreddit doesn't exist..."
 			);
