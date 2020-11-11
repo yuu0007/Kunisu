@@ -57,7 +57,8 @@ module.exports = class extends Command {
 					dynamic: true,
 					size: 4096,
 				})
-			);
+			)
+			.setTimestamp();
 		return m.edit(embed);
 	}
 };
