@@ -72,7 +72,7 @@ app.get("/", async (request, response) => {
 	);
 });
 
-server.listen(3000, () => {
+server.listen(2007, () => {
 	console.log("Monitoring is ready!");
 });
 
