@@ -29,7 +29,7 @@ module.exports = class extends Command {
 			_${results.err ? "An error occurred:" : "Successfully executed."}_
 			\`\`\`sh
 			${
-				results.std.length > 2048
+				results.std.length > 2000
 					? `${results.std.substring(0, 1991)}...`
 					: results.std
 			}
