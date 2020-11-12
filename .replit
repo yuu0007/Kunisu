@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "npx eslint . --fix && npx prettier --write . && git add -A && git commit -m \"fixed exec cmd\" && git push -u origin master"
+run = "npx eslint . --fix && npx prettier --write . && git add -A && git commit -m \"updated git ignore\" && git push -u origin master"
