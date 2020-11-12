@@ -46,7 +46,7 @@ let rounds = 0;
 
 setInterval(() => {
 	const database = JSON.parse(
-		fs.readFileSync(path.join(__dirname, "links.json"), "utf-8")
+		fs.readFileSync(path.join(__dirname, "link.json"), "utf-8")
 	);
 	count = 0;
 	invcount = 0;
