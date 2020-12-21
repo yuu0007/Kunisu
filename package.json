@@ -29,7 +29,7 @@
 		"libsodium-wrappers": "^0.7.8",
 		"node-fetch": "^2.6.1",
 		"node-superfetch": "^0.1.10",
-		"quickmongo": "^2.0.6",
+		"quickmongo": "^3.0.0",
 		"rule34js": "^2.2.0",
 		"sqlite": "^4.0.17",
 		"sqlite3": "^5.0.0",
