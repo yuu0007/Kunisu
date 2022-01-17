@@ -27,7 +27,7 @@
 		"goodparts": "^1.3.0",
 		"hastebin": "^0.2.1",
 		"libsodium-wrappers": "^0.7.8",
-		"node-fetch": "^2.6.1",
+		"node-fetch": "^3.1.1",
 		"node-superfetch": "^0.1.10",
 		"quickmongo": "^2.0.6",
 		"rule34js": "^2.2.0",
