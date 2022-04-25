@@ -31,7 +31,7 @@
 		"node-superfetch": "^0.1.10",
 		"quickmongo": "^2.0.6",
 		"rule34js": "^2.2.0",
-		"sqlite": "^4.0.17",
+		"sqlite": "^4.1.1",
 		"sqlite3": "^5.0.0",
 		"utf-8-validate": "^5.0.3",
 		"wtf-plugin-nsfw": "^0.1.0",
