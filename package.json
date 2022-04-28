@@ -32,7 +32,7 @@
 		"quickmongo": "^2.0.6",
 		"rule34js": "^2.2.0",
 		"sqlite": "^4.0.17",
-		"sqlite3": "^5.0.0",
+		"sqlite3": "^5.0.6",
 		"utf-8-validate": "^5.0.3",
 		"wtf-plugin-nsfw": "^0.1.0",
 		"wtf_wikipedia": "^8.5.1",
